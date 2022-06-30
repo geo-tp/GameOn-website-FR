@@ -12,13 +12,6 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close");
-const firstname = document.getElementById("first");
-const lastname = document.getElementById("last");
-const email = document.getElementById("email");
-const birthdate = document.getElementById("birthdate");
-const quantity = document.getElementById("quantity");
-const radioButtons = document.querySelectorAll(".checkbox-input");
-const userAgreementCheckbox = document.getElementById("checkbox1");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -35,22 +28,4 @@ function launchModal() {
 function closeModal() {
   checkUserAgreementIsSelected();
   modalbg.style.display = "none";
-}
-
-// check if at leat 1 location radio button is selected
-function checkLocationIsSelected() {
-  for (let radio of radioButtons) {
-    if (radio.checked && radio.value != "on") {
-      return true;
-    }
-  }
-  return false;
-}
-
-// check if user agreement checkbox is selected
-function checkUserAgreementIsSelected() {
-  if (userAgreementCheckbox.checked) {
-    return true;
-  }
-  return false;
 }
