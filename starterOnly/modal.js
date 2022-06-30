@@ -12,6 +12,11 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.querySelectorAll(".close");
+const firstname = document.getElementById("first");
+const lastname = document.getElementById("last");
+const email = document.getElementById("email");
+const birthdate = document.getElementById("birthdate");
+const quantity = document.getElementById("quantity");
 const radioButtons = document.querySelectorAll(".checkbox-input");
 const userAgreementCheckbox = document.getElementById("checkbox1");
 
