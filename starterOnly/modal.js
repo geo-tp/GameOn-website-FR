@@ -12,9 +12,8 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalBody = document.querySelectorAll(".modal-body");
 const modalClose = document.querySelectorAll(".close");
+const modalLoader = document.querySelectorAll(".modal-loader");
 const formData = document.querySelectorAll(".formData");
-// We use it to set default body when modal is closed after confirmation
-const modalDefaultBody = modalBody[0].cloneNode(true);
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -38,8 +37,19 @@ function defaultModal() {
   let confirmationContainer = document.querySelectorAll(
     ".modal-confirmation-container"
   )[0];
-  modalBody[0].parentNode.removeChild(confirmationContainer);
-  modalBody[0].parentNode.replaceChild(modalDefaultBody, modalBody[0]);
+
+  if (confirmationContainer) {
+    confirmationContainer.style.visibility = "hidden";
+    modalBody[0].style.visibility = "visible";
+  }
+}
+
+function displayLoader() {
+  modalLoader.style.display = "block";
+}
+
+function hideLoader() {
+  modalLoader.style.display = "none";
 }
 
 // update modal when form is validated
