@@ -7,6 +7,7 @@ const quantity = document.getElementById("quantity");
 const radioButtons = document.querySelectorAll(".checkbox-input");
 const userAgreementCheckbox = document.getElementById("checkbox1");
 const allInputs = document.getElementsByTagName("input");
+const registerForm = document.getElementById("register-form");
 
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const birthRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
@@ -159,5 +160,6 @@ function validate(e) {
 
   if (formIsCompleted) {
     updateToConfirmationModal();
+    registerForm.reset();
   }
 }
