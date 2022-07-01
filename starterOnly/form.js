@@ -12,9 +12,9 @@ const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const birthRegex =
   /(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
 
-inputEventOnChange();
+inputsEventOnChange();
 
-function inputEventOnChange() {
+function inputsEventOnChange() {
   for (let input of allInputs) {
     input.addEventListener("input", () => hideError(input));
   }
@@ -100,28 +100,70 @@ function checkUserAgreementIsSelected() {
 }
 
 function displayError(element) {
+  console.log(element);
   parent = element.parentNode;
+  if (!parent) {
+    parent = element[0].parentNode;
+  }
+
   parent.setAttribute("data-error-visible", true);
 }
 
 function hideError(element) {
-  console.log(element);
-  parent = element.parentNode;
+  let parent = element.parentNode;
+
+  if (!parent) {
+    parent = element[0].parentNode;
+  }
+
   parent.setAttribute("data-error-visible", false);
 }
 
 function validate(e) {
   e.preventDefault();
+  let formIsCompleted = true;
 
-  if (
-    checkFirstNameIsValid() &&
-    checkLastNameIsValid() &&
-    checkEmailIsValid() &&
-    checkBirthDateIsValid() &&
-    checkLocationIsSelected() &&
-    checkParcipationNumberIsValid() &&
-    checkUserAgreementIsSelected()
-  ) {
+  if (!checkFirstNameIsValid()) {
+    formIsCompleted = false;
+  }
+
+  if (!checkLastNameIsValid()) {
+    formIsCompleted = false;
+  }
+
+  if (!checkEmailIsValid()) {
+    formIsCompleted = false;
+  }
+
+  if (!checkBirthDateIsValid()) {
+    formIsCompleted = false;
+  }
+
+  if (!checkLocationIsSelected()) {
+    formIsCompleted = false;
+  }
+
+  if (!checkParcipationNumberIsValid()) {
+    formIsCompleted = false;
+  }
+
+  if (!checkUserAgreementIsSelected()) {
+    formIsCompleted = false;
+  }
+
+  //   if (
+  //     !checkFirstNameIsValid() ||
+  //     !checkLastNameIsValid() ||
+  //     !checkEmailIsValid() ||
+  //     !checkBirthDateIsValid() ||
+  //     !checkLocationIsSelected() ||
+  //     !checkParcipationNumberIsValid() ||
+  //     !checkUserAgreementIsSelected()
+  //   ) {
+  //     formIsCompleted = false;
+  //   }
+
+  if (formIsCompleted) {
     // DO SUCCESS
   }
 }
