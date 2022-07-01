@@ -90,7 +90,7 @@ function checkLocationIsSelected() {
   return false;
 }
 
-// check if user agreement checkbox is selected
+// check if user agreement checkbox is checked
 function checkUserAgreementIsSelected() {
   if (userAgreementCheckbox.checked) {
     return true;
