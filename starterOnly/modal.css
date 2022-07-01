@@ -559,16 +559,18 @@ footer {
 
 .modal-confirmation {
   visibility: hidden;
+  opacity: 0;
   position: absolute;
   background: #232323;
   width: 100%;
   height: 100%;
   z-index: 2;
+  transition: all 1s;
 }
 
 .modal-confirmation-close {
   position: absolute;
-  bottom: 4%;
+  bottom: 4.5%;
   left: 50%;
   transform: translateX(-50%);
 }

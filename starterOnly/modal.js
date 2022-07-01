@@ -42,9 +42,12 @@ function closeModal() {
 // hide confirmation message
 function hideConfirmation() {
   modalConfirmation[0].style.visibility = "hidden";
+  //We use opacity to animate confirmation
+  modalConfirmation[0].style.opacity = 0;
 }
 
 // display confirmation message
 function displayConfirmation() {
   modalConfirmation[0].style.visibility = "visible";
+  modalConfirmation[0].style.opacity = 1;
 }
