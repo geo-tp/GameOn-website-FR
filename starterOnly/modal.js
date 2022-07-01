@@ -13,13 +13,20 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const modalBody = document.querySelectorAll(".modal-body");
 const modalClose = document.querySelectorAll(".close");
 const modalLoader = document.querySelectorAll(".modal-loader");
+const modalConfirmation = document.querySelectorAll(".modal-confirmation");
+const modalConfirmationClose = document.querySelectorAll(
+  ".modal-confirmation-close"
+);
 const formData = document.querySelectorAll(".formData");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// close modal evant
+// close modal event
 modalClose.forEach((btn) => btn.addEventListener("click", closeModal));
+modalConfirmationClose.forEach((btn) =>
+  btn.addEventListener("click", closeModal)
+);
 
 // launch modal form
 function launchModal() {
@@ -50,6 +57,10 @@ function displayLoader() {
 
 function hideLoader() {
   modalLoader.style.display = "none";
+}
+
+function displayConfirmation() {
+  modalConfirmation[0].style.visibility = "visible";
 }
 
 // update modal when form is validated

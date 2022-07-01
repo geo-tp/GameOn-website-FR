@@ -308,6 +308,7 @@ input[data-error]::after {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
+  z-index: 50;
 }
 .close:before,
 .close:after {
@@ -554,6 +555,15 @@ footer {
 }
 .modal-loader div:nth-child(3) {
   animation-delay: -0.15s;
+}
+
+.modal-confirmation {
+  visibility: hidden;
+  position: absolute;
+  background: #232323;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .modal-confirmation-close {

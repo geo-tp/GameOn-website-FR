@@ -159,7 +159,7 @@ function validate(e) {
   }
 
   if (formIsCompleted) {
-    updateToConfirmationModal();
+    displayConfirmation();
     registerForm.reset();
   }
 }
