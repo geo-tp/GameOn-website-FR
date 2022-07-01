@@ -520,6 +520,26 @@ footer {
   }
 }
 
+.modal-confirmation-container {
+}
+
+.modal-confirmation-close {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-confirmation-text {
+  font-size: 34px;
+  text-align: center;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;
