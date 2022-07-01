@@ -9,8 +9,7 @@ const userAgreementCheckbox = document.getElementById("checkbox1");
 const allInputs = document.getElementsByTagName("input");
 
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const birthRegex =
-  /(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
+const birthRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 
 inputsEventOnChange();
 
@@ -66,7 +65,8 @@ function checkBirthDateIsValid() {
 
 // check if tournament participation's number is provided
 function checkParcipationNumberIsValid() {
-  if (typeof quantity === "number") {
+  let quantityInt = parseInt(quantity.value);
+  if (quantityInt) {
     return true;
   }
 
@@ -100,7 +100,6 @@ function checkUserAgreementIsSelected() {
 }
 
 function displayError(element) {
-  console.log(element);
   parent = element.parentNode;
   if (!parent) {
     parent = element[0].parentNode;
@@ -151,19 +150,7 @@ function validate(e) {
     formIsCompleted = false;
   }
 
-  //   if (
-  //     !checkFirstNameIsValid() ||
-  //     !checkLastNameIsValid() ||
-  //     !checkEmailIsValid() ||
-  //     !checkBirthDateIsValid() ||
-  //     !checkLocationIsSelected() ||
-  //     !checkParcipationNumberIsValid() ||
-  //     !checkUserAgreementIsSelected()
-  //   ) {
-  //     formIsCompleted = false;
-  //   }
-
   if (formIsCompleted) {
-    // DO SUCCESS
+    updateToConfirmationModal();
   }
 }
