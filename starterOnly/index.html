@@ -15,23 +15,30 @@
     />
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
-      <div class="header-logo">
-        <img alt="logo" src="Logo.png" width="auto" height="auto" />
-      </div>
-      <div class="main-navbar">
-        <a href="#" class="active"><span>Accueil</span></a>
-        <a href="#"><span>Détails de l'évènement</span></a>
-        <a href="#"><span>À propos</span></a>
-        <a href="#"><span>Contact</span></a>
-        <a href="#"><span>Évènements passés</span></a>
-        <a href="javascript:void(0);" class="icon" onclick="editNav()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-    </div>
+    <!-- HEADER -->
+    <header>
+      <nav class="topnav" id="myTopnav">
+        <div class="header-logo">
+          <img alt="logo" src="Logo.png" />
+        </div>
+        <div class="main-navbar">
+          <a href="#" class="active"><span>Accueil</span></a>
+          <a href="#"><span>Détails de l'évènement</span></a>
+          <a href="#"><span>À propos</span></a>
+          <a href="#"><span>Contact</span></a>
+          <a href="#"><span>Évènements passés</span></a>
+          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- MAIN -->
     <main>
-      <div class="hero-section">
+      <!-- HERO -->
+      <section class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">
             Marathon national<br />
@@ -47,8 +54,10 @@
           <img src="./bg_img.jpg" alt="img" />
         </div>
         <button class="btn-signup modal-btn">je m'inscris</button>
-      </div>
+      </section>
+      <!-- END HERO -->
 
+      <!-- MODAL -->
       <div class="bground">
         <div class="content">
           <span class="close"></span>
@@ -59,6 +68,7 @@
               method="get"
               onsubmit="return validate(event);"
             >
+              <!-- FIRSTNAME -->
               <div
                 class="formData"
                 data-error="Vous devez saisir au moins 2 caractères"
@@ -72,6 +82,7 @@
                   name="first"
                 /><br />
               </div>
+              <!-- LASTNAME -->
               <div
                 class="formData"
                 data-error="Vous devez saisir au moins 2 caractères"
@@ -85,6 +96,7 @@
                   name="last"
                 /><br />
               </div>
+              <!-- EMAIL -->
               <div
                 class="formData"
                 data-error="Vous devez saisir une addresse email valide"
@@ -98,6 +110,7 @@
                   name="email"
                 /><br />
               </div>
+              <!-- BIRTHDATE -->
               <div
                 class="formData"
                 data-error="Vous devez selectionner votre date de naissance"
@@ -110,6 +123,7 @@
                   name="birthdate"
                 /><br />
               </div>
+              <!-- PARTICIPATION -->
               <div
                 class="formData"
                 data-error="Vous devez saisir un nombre"
@@ -203,7 +217,7 @@
                   Portland</label
                 >
               </div>
-
+              <!-- USER AGREEMENT -->
               <div
                 class="formData"
                 data-error="Vous devez accepter les conditions d'utilisation"
@@ -223,24 +237,24 @@
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br />
               </div>
-              <input
-                class="btn-submit"
-                type="submit"
-                class="button"
-                value="C'est parti"
-              />
+              <input class="btn-submit" type="submit" value="C'est parti" />
             </form>
           </div>
         </div>
       </div>
+      <!-- END MODAL -->
     </main>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
+    <!-- END FOOTER -->
     <script src="modal.js"></script>
     <script src="form.js"></script>
   </body>

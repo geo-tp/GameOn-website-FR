@@ -13,6 +13,7 @@ const birthRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 
 inputsEventOnChange();
 
+// bind event to hide error when input value is updated by user
 function inputsEventOnChange() {
   for (let input of allInputs) {
     input.addEventListener("input", () => hideError(input));
@@ -99,8 +100,11 @@ function checkUserAgreementIsSelected() {
   return false;
 }
 
+// change data-error-visible to display error
 function displayError(element) {
   parent = element.parentNode;
+
+  // element can be Nodelist
   if (!parent) {
     parent = element[0].parentNode;
   }
@@ -108,9 +112,11 @@ function displayError(element) {
   parent.setAttribute("data-error-visible", true);
 }
 
+// change data-error-visible to hide error
 function hideError(element) {
   let parent = element.parentNode;
 
+  // element can be Nodelist
   if (!parent) {
     parent = element[0].parentNode;
   }
@@ -118,6 +124,7 @@ function hideError(element) {
   parent.setAttribute("data-error-visible", false);
 }
 
+// Validate all form's inputs and update modal to show confirmation
 function validate(e) {
   e.preventDefault();
   let formIsCompleted = true;
