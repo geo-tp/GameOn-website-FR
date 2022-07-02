@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reservation</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="topnav" id="myTopnav">
+        <div class="header-logo">
+          <img alt="logo" src="./assets/images/Logo.png" />
+        </div>
+        <div class="main-navbar">
+          <a href="#" class="active"><span>Accueil</span></a>
+          <a href="#"><span>Détails de l'évènement</span></a>
+          <a href="#"><span>À propos</span></a>
+          <a href="#"><span>Contact</span></a>
+          <a href="#"><span>Évènements passés</span></a>
+          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+            <i id="navbar-bar-icon" class="fa fa-bars"></i>
+            <i id="navbar-close-icon" class="fa fa-close"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-headline">
+            Marathon national<br />
+            de jeux vidéos
+          </h1>
+          <p class="hero-text">
+            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
+            réservations... Places limitées !
+          </p>
+          <button class="btn-signup modal-btn">je m'inscris</button>
+        </div>
+        <div class="hero-img">
+          <img src="assets/images/bg_img.jpg" alt="img" />
+        </div>
+        <button class="btn-signup modal-btn">je m'inscris</button>
+      </section>
+      <!-- END HERO -->
+
+      <!-- MODAL -->
+      <div class="bground">
+        <div class="content">
+          <span class="close"></span>
+
+          <!-- CONFIRMATION -->
+          <div class="modal-confirmation">
+            <p class="modal-confirmation-text">Merci pour votre inscription</p>
+            <button class="modal-confirmation-close btn-submit">Fermer</button>
+          </div>
+          <!-- END CONFIRMATION -->
+
+          <div class="modal-body">
+            <!-- REGISTER FORM -->
+            <form
+              name="reserve"
+              action="index.html"
+              method="get"
+              id="register-form"
+              onsubmit="return validate(event);"
+            >
+              <!-- FIRSTNAME -->
+              <div
+                class="formData"
+                data-error="Vous devez saisir au moins 2 caractères"
+                data-error-visible="false"
+              >
+                <label for="first">Prénom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                /><br />
+              </div>
+              <!-- LASTNAME -->
+              <div
+                class="formData"
+                data-error="Vous devez saisir au moins 2 caractères"
+                data-error-visible="false"
+              >
+                <label for="last">Nom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="last"
+                  name="last"
+                /><br />
+              </div>
+              <!-- EMAIL -->
+              <div
+                class="formData"
+                data-error="Vous devez saisir une addresse email valide"
+                data-error-visible="false"
+              >
+                <label for="email">E-mail</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="email"
+                  name="email"
+                /><br />
+              </div>
+              <!-- BIRTHDATE -->
+              <div
+                class="formData"
+                data-error="Vous devez selectionner votre date de naissance"
+              >
+                <label for="birthdate">Date de naissance</label><br />
+                <input
+                  class="text-control"
+                  type="date"
+                  id="birthdate"
+                  name="birthdate"
+                /><br />
+              </div>
+              <!-- PARTICIPATION -->
+              <div
+                class="formData"
+                data-error="Vous devez saisir un nombre"
+                data-error-visible="false"
+              >
+                <label for="quantity"
+                  >À combien de tournois GameOn avez-vous déjà participé
+                  ?</label
+                ><br />
+                <input
+                  type="text"
+                  class="text-control"
+                  id="quantity"
+                  name="quantity"
+                  min="0"
+                  max="99"
+                />
+              </div>
+              <p class="text-label">
+                A quel tournoi souhaitez-vous participer cette année ?
+              </p>
+              <!-- EVENT LOCATION -->
+              <div
+                class="formData"
+                data-error="Vous devez choisir un lieu"
+                data-error-visible="false"
+              >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location1"
+                  name="location"
+                  value="New York"
+                />
+                <label class="checkbox-label" for="location1">
+                  <span class="checkbox-icon"></span>
+                  New York</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location2"
+                  name="location"
+                  value="San Francisco"
+                />
+                <label class="checkbox-label" for="location2">
+                  <span class="checkbox-icon"></span>
+                  San Francisco</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location3"
+                  name="location"
+                  value="Seattle"
+                />
+                <label class="checkbox-label" for="location3">
+                  <span class="checkbox-icon"></span>
+                  Seattle</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location4"
+                  name="location"
+                  value="Chicago"
+                />
+                <label class="checkbox-label" for="location4">
+                  <span class="checkbox-icon"></span>
+                  Chicago</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location5"
+                  name="location"
+                  value="Boston"
+                />
+                <label class="checkbox-label" for="location5">
+                  <span class="checkbox-icon"></span>
+                  Boston</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location6"
+                  name="location"
+                  value="Portland"
+                />
+                <label class="checkbox-label" for="location6">
+                  <span class="checkbox-icon"></span>
+                  Portland</label
+                >
+              </div>
+              <!-- USER AGREEMENT -->
+              <div
+                class="formData"
+                data-error="Vous devez accepter les conditions d'utilisation"
+                data-eror-visible="false"
+              >
+                <input
+                  class="checkbox-input"
+                  type="checkbox"
+                  id="checkbox1"
+                  checked
+                />
+                <label class="checkbox2-label" for="checkbox1">
+                  <span class="checkbox-icon"></span>
+                  J'ai lu et accepté les conditions d'utilisation.
+                </label>
+                <br />
+                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+                <label class="checkbox2-label" for="checkbox2">
+                  <span class="checkbox-icon"></span>
+                  Je souhaite être prévenu des prochains évènements.
+                </label>
+                <br />
+              </div>
+              <input class="btn-submit" type="submit" value="C'est parti" />
+            </form>
+            <!-- END REGISTER FORM -->
+          </div>
+        </div>
+      </div>
+      <!-- END MODAL -->
+    </main>
+    <!-- END MAIN -->
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
+    </footer>
+    <!-- END FOOTER -->
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/nav.js"></script>
+  </body>
+</html>
