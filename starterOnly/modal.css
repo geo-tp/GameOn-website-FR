@@ -31,7 +31,7 @@ img {
 }
 
 .topnav {
-  /* overflow: hidden; */
+  overflow: hidden;
   margin: 3.5%;
   display: flex;
   align-items: center;
@@ -121,6 +121,11 @@ img {
     float: none;
     display: block;
     text-align: left;
+  }
+
+  .topnav.responsive .main-navbar {
+    animation: 500ms appear-slowly ease-in-out;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -539,7 +544,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     white-space: normal;
   }
   .hero-text {
@@ -593,6 +598,16 @@ footer {
   from {
     opacity: 0;
     transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-slowly {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
   }
   to {
     opacity: 1;

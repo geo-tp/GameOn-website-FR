@@ -1,5 +1,6 @@
 // DOM Elements
 var myTopnav = document.getElementById("myTopnav");
+var mainNavBar = document.querySelectorAll("main-navbar");
 
 // Open or close navList
 function editNav() {
