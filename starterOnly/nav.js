@@ -14,13 +14,14 @@ window.onscroll = function () {
 function editNav() {
   if (myTopnav.className === "topnav") {
     myTopnav.className += " responsive";
-    closeIcon.style.display = "none";
-    barIcon.style.display = "block";
+    closeIcon.style.display = "block";
+    barIcon.style.display = "none";
+
     // Avoid display conflict
     closeModal();
   } else {
-    closeIcon.style.display = "block";
-    barIcon.style.display = "none";
+    closeIcon.style.display = "none";
+    barIcon.style.display = "block";
     myTopnav.className = "topnav";
   }
 }
@@ -28,6 +29,8 @@ function editNav() {
 // close nav list
 function closeNav() {
   myTopnav.className = "topnav";
+  closeIcon.style.display = "none";
+  barIcon.style.display = "block";
 }
 
 function borderToHeader() {
