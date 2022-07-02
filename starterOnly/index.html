@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header>
+    <header class="header">
       <nav class="topnav" id="myTopnav">
         <div class="header-logo">
           <img alt="logo" src="Logo.png" />
@@ -28,7 +28,8 @@
           <a href="#"><span>Contact</span></a>
           <a href="#"><span>Évènements passés</span></a>
           <a href="javascript:void(0);" class="icon" onclick="editNav()">
-            <i class="fa fa-bars"></i>
+            <i id="navbar-close-icon" class="fa fa-bars"></i>
+            <i id="navbar-bar-icon" class="fa fa-close"></i>
           </a>
         </div>
       </nav>
@@ -36,7 +37,7 @@
     <!-- END HEADER -->
 
     <!-- MAIN -->
-    <main>
+    <main class="main">
       <!-- HERO -->
       <section class="hero-section">
         <div class="hero-content">
