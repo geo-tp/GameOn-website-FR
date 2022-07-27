@@ -3,7 +3,7 @@ var myTopnav = document.getElementById("myTopnav");
 var mainNavBar = document.querySelectorAll("main-navbar");
 var closeIcon = document.getElementById("navbar-close-icon");
 var barIcon = document.getElementById("navbar-bar-icon");
-var header = document.querySelectorAll(".header");
+var header = document.querySelector(".header");
 
 // Onscroll event to apply border to header
 window.onscroll = function () {
@@ -36,8 +36,8 @@ function closeNav() {
 function borderToHeader() {
   console.log(window.pageYOffset);
   if (window.pageYOffset == 0) {
-    header[0].style.border = "1px solid white";
+    header.style.border = "1px solid white";
   } else {
-    header[0].style.border = "1px solid lightgrey";
+    header.style.border = "1px solid lightgrey";
   }
 }

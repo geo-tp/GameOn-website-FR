@@ -4,7 +4,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const modalBody = document.querySelectorAll(".modal-body");
 const modalClose = document.querySelectorAll(".close");
 const modalLoader = document.querySelectorAll(".modal-loader");
-const modalConfirmation = document.querySelectorAll(".modal-confirmation");
+const modalConfirmation = document.querySelector(".modal-confirmation");
 const modalConfirmationClose = document.querySelectorAll(
   ".modal-confirmation-close"
 );
@@ -34,13 +34,13 @@ function closeModal() {
 
 // hide confirmation message
 function hideConfirmation() {
-  modalConfirmation[0].style.visibility = "hidden";
+  modalConfirmation.style.visibility = "hidden";
   //We use opacity to animate confirmation
-  modalConfirmation[0].style.opacity = 0;
+  modalConfirmation.style.opacity = 0;
 }
 
 // display confirmation message
 function displayConfirmation() {
-  modalConfirmation[0].style.visibility = "visible";
-  modalConfirmation[0].style.opacity = 1;
+  modalConfirmation.style.visibility = "visible";
+  modalConfirmation.style.opacity = 1;
 }
